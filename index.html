@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AppMatrix v1.0 – Offline Web3 Tools</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tone.js for sound effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    },
+                    colors: {
+                        'brand-accent': '#be00c5',
+                        'brand-secondary': '#00d1c5',
+                        'brand-dark': '#0a0514',
+                    },
+                    keyframes: {
+                        'glow': {
+                            '0%, 100%': { boxShadow: '0 0 5px #be00c5, 0 0 10px #be00c5, 0 0 15px #be00c5' },
+                            '50%': { boxShadow: '0 0 10px #be00c5, 0 0 20px #be00c5, 0 0 30px #be00c5' },
+                        },
+                        'pulse': {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '0.7' },
+                            '50%': { transform: 'scale(1.05)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                    animation: {
+                        'glow': 'glow 1.5s ease-in-out infinite',
+                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a more futuristic feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #be00c5;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d733de;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
